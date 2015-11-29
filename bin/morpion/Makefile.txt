@@ -1,0 +1,21 @@
+default: clean compil exec
+
+clean:
+	rm -Rf classes javadoc
+
+compil:
+	javac -source 1.4 -d . sources/*.java
+
+doc:
+	javadoc javadoc -author -version -d javadoc sources/*.java -link http://java.sun.com/j2se/1.4.2/docs/api
+edit:
+	nedit sources/*.java &
+
+exec:
+	java classes/Main
+
+tar:
+	tar -cjvf ~/Miamtar.tar.bz2 *
+
+zip:
+	zip -g ~/Miam.zip *
